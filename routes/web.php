@@ -37,6 +37,7 @@ Route::get('/bot/{bot}', [\App\Http\Controllers\BotController::class, 'show'])->
 //main - listings
 
 //main - rentals
+Route::post('/submit-rental/{listing}', [\App\Http\Controllers\RentalController::class, 'create'])->name('submit-rental');
 
 //main - legal
 Route::get('/legal', function(){
