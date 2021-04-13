@@ -7,11 +7,21 @@ use Illuminate\Http\Request;
 
 class BotController extends Controller
 {
+    public function indexAdmin()
+    {
+        $bots = Bot::all();
+        return view('admin.bots', compact('bots'));
+    }
+
     public function index()
     {
         $bots = Bot::all();
+        return view('main.bots.all-bots', compact('bots'));
+    }
 
-        return view('admin.bots', compact('bots'));
+    public function show(Bot $bot)
+    {
+        return view('main.bots.show', compact('bot'));
     }
 
     public function create(Request $request)

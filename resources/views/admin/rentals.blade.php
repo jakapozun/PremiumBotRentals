@@ -9,15 +9,20 @@
                 <div class="col-sm-12 text-left mb-1">
                     <div class="card">
                         <div class="card-header">
-                            Rental #{{$rent->id}}
+                            <h5 class="card-title">Rental #{{$rent->id}} | User: {{ $rent->user->name }} | {{ $rent->user->email }}</h5>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">User: {{ $rent->user->name }} | {{ $rent->user->email }}</h5>
-                            <p class="card-text">PRICE: {{ $rent->listing->price }}</p>
-                            <p class="card-text">LICENSE KEY: {{ $rent->listing->licence_key }}</p>
-                            <p class="card-text">SETUP GUIDE: {{ $rent->listing->setup_guide }}</p>
-                            <p class="card-text">STATUS RENTAL: {{ $rent->status }}</p>
-                            <p class="card-text">STATUS LISTING: {{ $rent->listing->status }}</p>
+                        <div class="card-body d-flex">
+
+                            <div class="col-sm-6">
+                                <p class="card-text">PRICE: {{ $rent->listing->price }}$</p>
+                                <p class="card-text">LICENSE KEY: {{ $rent->listing->licence_key }}</p>
+                                <p class="card-text">FROM: <u>{{ $rent->listing->date_from }}</u> TO: <u>{{$rent->listing->date_to}}</u></p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="card-text">SETUP GUIDE: {{ $rent->listing->setup_guide }}</p>
+                                <p class="card-text">STATUS RENTAL: {{ $rent->status }}</p>
+                                <p class="card-text">STATUS LISTING: {{ $rent->listing->status }}</p>
+                            </div>
                         </div>
 
                         <button class="btn btn-danger">Delete</button>

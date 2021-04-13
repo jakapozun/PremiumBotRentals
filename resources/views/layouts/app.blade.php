@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Bots</a>
+                        <a class="nav-link" href="{{ route('all-bots') }}">All Bots</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Rentals</a>
@@ -37,10 +37,10 @@
                         <a class="nav-link" href="#">My Listings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
+                        <a class="nav-link" href="{{ route('settings', auth()->user()) }}">Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/legal">Legal</a>
+                        <a class="nav-link" href="{{route('legal')}}">Legal</a>
                     </li>
                 </ul>
                 <!-- Right Side Of Navbar -->
